@@ -1,0 +1,34 @@
+Last login: Mon Jan 16 18:05:08 on ttys007
+arinaten@air-arina ~ % cd Downloads
+arinaten@air-arina Downloads % ls
+arinaten@air-arina Downloads % chmod 700 second_key.pem                  
+arinaten@air-arina Downloads % chmod 700 second_key.pem                  
+arinaten@air-arina Downloads % ssh -i second_key.pem ubuntu@54.145.125.224
+
+ubuntu@ip-172-31-84-128:~$ sudo apt-get update
+
+ubuntu@ip-172-31-84-128:~$ sudo apt-get upgrade
+ubuntu@ip-172-31-84-128:~$ git clone https://github.com/arina231204/project_16.01.git
+ubuntu@ip-172-31-84-128:~/project_16.01$ sudo apt-get install venv
+ubuntu@ip-172-31-84-128:~/project_16.01$ sudo apt-get install python3-venv
+ubuntu@ip-172-31-84-128:~/project_16.01$ python3 -m venv venv
+ubuntu@ip-172-31-84-128:~/project_16.01$ source venv/bin/activate
+(venv) ubuntu@ip-172-31-84-128:~/project_16.01$ pip3 install requirements.txt 
+(venv) ubuntu@ip-172-31-84-128:~/project_16.01$ pip3 install -r  requirements.txt 
+(venv) ubuntu@ip-172-31-84-128:~/project_16.01$ pip3 install -r  requirements.txt 
+(venv) ubuntu@ip-172-31-84-128:~/project_16.01$ sudo apt-get install gcc
+(venv) ubuntu@ip-172-31-84-128:~/project_16.01$ pip list
+(venv) ubuntu@ip-172-31-84-128:~/project_16.01$ python3 manage.py runserver
+(venv) ubuntu@ip-172-31-84-128:~/project_16.01$ python3 manage.py runserver 0.0.0.0:8000
+(venv) ubuntu@ip-172-31-84-128:~/project_16.01$ mc
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/mceditpip3 install 
+  4. /usr/bin/vim.tiny
+  5. /bin/ed
+
+Choose 1-5 [1]: 3
+(venv) ubuntu@ip-172-31-84-128:~/project_16.01$ python3 manage.py runserver 0.0.0.0:8000
+
+

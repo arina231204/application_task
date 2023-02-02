@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<table class="table table-bordered">
+  <thead style="background-color: #FFFFFF" >
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Urgency</th>
+      <th scope="col">File</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody  style="background-color: #FFFFFF" >
+    {% for application in apl %}
+      <tr>
+        <td>{{ application.title }}</td>
+        <td>{{ application.urgency}}</td>
+        <td>
+          {% for file in application.files_set.all %}
+            {{ file.file.name }}<br>
+          {% endfor %}
+        </td>
+        <td>
+          {% for file in application.files_set.all %}
+            <a href="{{ file.file.url }}" class="btn-group-vertical"  download>Download</a><br>
+          {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
+

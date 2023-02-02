@@ -1,0 +1,711 @@
+Last login: Tue Jan 17 13:12:07 on ttys002
+arinaten@MacBook-Air-Arina ~ % cd Downloads
+arinaten@MacBook-Air-Arina Downloads % chmod 700  key_3.pem
+arinaten@MacBook-Air-Arina Downloads % ssh -i second_key.pem ubuntu@54.145.125.224
+^C
+arinaten@MacBook-Air-Arina Downloads % ssh -i key_3.pem ubuntu@44.202.158.149
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 5.4.0-1092-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Jan 17 07:18:33 UTC 2023
+
+  System load:  0.0               Processes:           98
+  Usage of /:   23.6% of 7.57GB   Users logged in:     1
+  Memory usage: 31%               IP address for eth0: 172.31.85.194
+  Swap usage:   0%
+
+
+7 updates can be applied immediately.
+7 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+New release '20.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue Jan 17 07:15:27 2023 from 46.251.198.82
+ubuntu@ip-172-31-85-194:~$ sudo apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Get:4 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+Fetched 88.7 kB in 0s (233 kB/s)                              
+Reading package lists... Done
+ubuntu@ip-172-31-85-194:~$ sudo apt-get upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following packages have been kept back:
+  linux-aws linux-headers-aws linux-image-aws
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+ubuntu@ip-172-31-85-194:~$ git clone https://github.com/Myrza-Alymbekov/EXAM_rest.git
+fatal: destination path 'EXAM_rest' already exists and is not an empty directory.
+ubuntu@ip-172-31-85-194:~$ fatal: destination path 'EXAM_rest' already exists and is not an empty directory.
+fatal:: command not found
+ubuntu@ip-172-31-85-194:~$ cd EXAM_rest/
+ubuntu@ip-172-31-85-194:~/EXAM_rest$ sudo apt-get install venv
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package venv
+ubuntu@ip-172-31-85-194:~/EXAM_rest$ sudo apt-get install python3-venv
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python3-venv is already the newest version (3.6.7-1~18.04).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+ubuntu@ip-172-31-85-194:~/EXAM_rest$  python3 -m venv venv
+ubuntu@ip-172-31-85-194:~/EXAM_rest$  source venv/bin/activate
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ sudo apt-get install gcc
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+gcc is already the newest version (4:7.4.0-1ubuntu2.3).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ pip3 install -r  requirements.txt 
+Requirement already satisfied: django==3.2 in ./venv/lib/python3.6/site-packages (from -r requirements.txt (line 1)) (3.2)
+Requirement already satisfied: djangorestframework in ./venv/lib/python3.6/site-packages (from -r requirements.txt (line 2)) (3.14.0)
+Requirement already satisfied: drf-yasg in ./venv/lib/python3.6/site-packages (from -r requirements.txt (line 3)) (1.21.4)
+Requirement already satisfied: django-filter in ./venv/lib/python3.6/site-packages (from -r requirements.txt (line 4)) (21.1)
+Requirement already satisfied: pytz in ./venv/lib/python3.6/site-packages (from django==3.2->-r requirements.txt (line 1)) (2022.7.1)
+Requirement already satisfied: sqlparse>=0.2.2 in ./venv/lib/python3.6/site-packages (from django==3.2->-r requirements.txt (line 1)) (0.4.3)
+Requirement already satisfied: asgiref<4,>=3.3.2 in ./venv/lib/python3.6/site-packages (from django==3.2->-r requirements.txt (line 1)) (3.4.1)
+Requirement already satisfied: ruamel.yaml>=0.16.13 in ./venv/lib/python3.6/site-packages (from drf-yasg->-r requirements.txt (line 3)) (0.17.21)
+Requirement already satisfied: coreapi>=2.3.3 in ./venv/lib/python3.6/site-packages (from drf-yasg->-r requirements.txt (line 3)) (2.3.3)
+Requirement already satisfied: inflection>=0.3.1 in ./venv/lib/python3.6/site-packages (from drf-yasg->-r requirements.txt (line 3)) (0.5.1)
+Requirement already satisfied: uritemplate>=3.0.0 in ./venv/lib/python3.6/site-packages (from drf-yasg->-r requirements.txt (line 3)) (4.1.1)
+Requirement already satisfied: coreschema>=0.0.4 in ./venv/lib/python3.6/site-packages (from drf-yasg->-r requirements.txt (line 3)) (0.0.4)
+Requirement already satisfied: packaging>=21.0 in ./venv/lib/python3.6/site-packages (from drf-yasg->-r requirements.txt (line 3)) (21.3)
+Requirement already satisfied: typing-extensions in ./venv/lib/python3.6/site-packages (from asgiref<4,>=3.3.2->django==3.2->-r requirements.txt (line 1)) (4.1.1)
+Requirement already satisfied: itypes in ./venv/lib/python3.6/site-packages (from coreapi>=2.3.3->drf-yasg->-r requirements.txt (line 3)) (1.2.0)
+Requirement already satisfied: requests in ./venv/lib/python3.6/site-packages (from coreapi>=2.3.3->drf-yasg->-r requirements.txt (line 3)) (2.27.1)
+Requirement already satisfied: jinja2 in ./venv/lib/python3.6/site-packages (from coreschema>=0.0.4->drf-yasg->-r requirements.txt (line 3)) (3.0.3)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in ./venv/lib/python3.6/site-packages (from packaging>=21.0->drf-yasg->-r requirements.txt (line 3)) (3.0.9)
+Requirement already satisfied: ruamel.yaml.clib>=0.2.6 in ./venv/lib/python3.6/site-packages (from ruamel.yaml>=0.16.13->drf-yasg->-r requirements.txt (line 3)) (0.2.7)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.6/site-packages (from jinja2->coreschema>=0.0.4->drf-yasg->-r requirements.txt (line 3)) (2.0.1)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.6/site-packages (from requests->coreapi>=2.3.3->drf-yasg->-r requirements.txt (line 3)) (3.4)
+Requirement already satisfied: charset-normalizer~=2.0.0 in ./venv/lib/python3.6/site-packages (from requests->coreapi>=2.3.3->drf-yasg->-r requirements.txt (line 3)) (2.0.12)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.6/site-packages (from requests->coreapi>=2.3.3->drf-yasg->-r requirements.txt (line 3)) (2022.12.7)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in ./venv/lib/python3.6/site-packages (from requests->coreapi>=2.3.3->drf-yasg->-r requirements.txt (line 3)) (1.26.14)
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ pip list
+Package             Version
+------------------- ---------
+asgiref             3.4.1
+certifi             2022.12.7
+charset-normalizer  2.0.12
+coreapi             2.3.3
+coreschema          0.0.4
+Django              3.2
+django-filter       21.1
+djangorestframework 3.14.0
+drf-yasg            1.21.4
+idna                3.4
+inflection          0.5.1
+itypes              1.2.0
+Jinja2              3.0.3
+MarkupSafe          2.0.1
+packaging           21.3
+pip                 21.3.1
+pkg_resources       0.0.0
+pyparsing           3.0.9
+pytz                2022.7.1
+requests            2.27.1
+ruamel.yaml         0.17.21
+ruamel.yaml.clib    0.2.7
+setuptools          59.6.0
+sqlparse            0.4.3
+typing_extensions   4.1.1
+uritemplate         4.1.1
+urllib3             1.26.14
+wheel               0.37.1
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py runserver 0.0.0.0:8000
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 17, 2023 - 13:21:01
+Django version 3.2, using settings 'exam.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ mc
+
+
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ pip list
+Package             Version
+------------------- ---------
+asgiref             3.4.1
+certifi             2022.12.7
+charset-normalizer  2.0.12
+coreapi             2.3.3
+coreschema          0.0.4
+Django              3.2
+django-filter       21.1
+djangorestframework 3.14.0
+drf-yasg            1.21.4
+idna                3.4
+inflection          0.5.1
+itypes              1.2.0
+Jinja2              3.0.3
+MarkupSafe          2.0.1
+packaging           21.3
+pip                 21.3.1
+pkg_resources       0.0.0
+pyparsing           3.0.9
+pytz                2022.7.1
+requests            2.27.1
+ruamel.yaml         0.17.21
+ruamel.yaml.clib    0.2.7
+setuptools          59.6.0
+sqlparse            0.4.3
+typing_extensions   4.1.1
+uritemplate         4.1.1
+urllib3             1.26.14
+wheel               0.37.1
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py runserver 0.0.0.0:8000
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 17, 2023 - 13:21:48
+Django version 3.2, using settings 'exam.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 17, 2023 - 13:22:12
+Django version 3.2, using settings 'exam.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 17, 2023 - 13:22:54
+Django version 3.2, using settings 'exam.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ sudo fuser -k 8000/tcp
+8000/tcp:             8438
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py runserver 0.0.0.0:8000
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 17, 2023 - 13:23:46
+Django version 3.2, using settings 'exam.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Not Found: /
+[17/Jan/2023 13:26:20] "GET / HTTP/1.1" 404 3256
+Not Found: /favicon.ico
+[17/Jan/2023 13:26:20] "GET /favicon.ico HTTP/1.1" 404 3307
+client_loop: send disconnect: Broken pipe
+arinaten@MacBook-Air-Arina Downloads % 
+arinaten@MacBook-Air-Arina Downloads % 
+arinaten@MacBook-Air-Arina Downloads % 
+arinaten@MacBook-Air-Arina Downloads % 
+arinaten@MacBook-Air-Arina Downloads % sh -i key_3.pem ubuntu@44.202.158.149
+key_3.pem: line 1: -----BEGIN: command not found
+key_3.pem: line 2: MIIEpAIBAAKCAQEAklwQlRlL0hU51ZJZM5mH7QyjYcCzMzm6Q0XAoKl1Tq8+vbfJ: command not found
+key_3.pem: line 3: sCBuTI/3Huym3rz2bW2YOBij5qeepp5lOU3/yOOV+bxAjpXw5s47ZRi1CbUIdapK: No such file or directory
+key_3.pem: line 4: hncukg+OXFaxDBOHdnz6snZW5PAhRsNh9Wf0xDZWhSUjCfkOFNcv7NjLuqo8W2qa: command not found
+key_3.pem: line 5: LSoBhwEfndC0tBVNt9o+5gMwFcagcG8j+RU58/VmEpifmTmjDQU0X7yLL4pY4Ne3: No such file or directory
+key_3.pem: line 6: 2ENgmWqqatLQ6bhE/fywiRhsmRsRLHB69jKo/r0N1Reg0ky/V2j+oWx1oVxaZsvP: No such file or directory
+key_3.pem: line 7: Kr7OlI6fxRbbryrLQXos4GEedT4rVZNPjxpXzwIDAQABAoIBAD0UzRrclscTcrKO: command not found
+key_3.pem: line 8: REoDnjWxG5KVUHRleDXRK4YhksKG4qFczYCC2GV9g73VOAMnS5T5sxheODDv7YdN: command not found
+key_3.pem: line 9: /aK/yas2SAYUqcCYFRTOJv2XJR7q/Z/VtQqPPNFaSqiAyZznnZY2rI3EU5lyGgEl: No such file or directory
+key_3.pem: line 10: U4GOpBkrMEqa6BemaFkMQYUQKV46QGCEWyVvdZomImLdQdjokQKdBczmSwvB7DD/: No such file or directory
+key_3.pem: line 11: yUJjaxmpLyekAEZN5q895m6QtOUmqM+oI7Y8bxPoVSt/W/8rmws7Hr6jy7hOfLMq: No such file or directory
+key_3.pem: line 12: VCBdSeY1VwPkCiQySESgxO58ZrBTcGZVAZGEvKR9EnObIChhTdjPEewkDVvwP07P: command not found
+key_3.pem: line 13: 4VQ4PEkCgYEA4J0rQLW+mSRafxaauQvCk8MUqgVStpxXFhXI7Nu1Lkob4pMPkvgl: command not found
+key_3.pem: line 14: BnaeZMfEOysG+rssnhJydjEaU3fYEdiy3kV6rrbCCgW/4K1BLhguPyilesv1BVRj: No such file or directory
+key_3.pem: line 15: pvf5GQt+oUEKVem++RR0M6LMgxAgzR4M9WrHLM/u6tkOCllvfJmzxIsCgYEAps+a: No such file or directory
+key_3.pem: line 16: YHEFaeL3hzgiGwLk481ZFpPFBRDldxB0TnAQDVaQPzElQYJejeHFSE/hJIrskoMl: No such file or directory
+key_3.pem: line 17: KvQsf5cXHPKxmEirOhXaBIAzOezOUKHc0aX3g119IEqsCX7S5hVamRhO16LSElMM: command not found
+key_3.pem: line 18: hNuX3nH2T/RvFzqz1788JufL9Rr9K/kH3XDN7k0CgYEAzQRIVYFOXmQDQhs00JB+: No such file or directory
+key_3.pem: line 19: YvbeJq5DKDEdgCgURLXp8z1rpGyM+54J1ZNx0hVQ9Jy6eyNbf1DhLyZ0nBk4nFmK: command not found
+key_3.pem: line 20: Mj2C1HQ2OoWy9PXPF660j6ufF62QkPPNHbsboBOQ2skOEQsQ6DMWOYdwWnTfK7ox: command not found
+key_3.pem: line 21: I9T5xdppfezu1t15WGbG4i8CgYAejmbkBbANLnNTRLgSpJwTEpmgJh9wByFRhyUW: command not found
+key_3.pem: line 22: /TYji1jPCoydjGkPqmy+C0vdqskdKYLUdHf2Q1ILjnVzxNQAxuHx8x3vHW7JnGzb: No such file or directory
+key_3.pem: line 23: xoApgyWZlbQf5Shy1zSKWMaQf5Xln2rqp2MRb2TETq1O3wT0n2ZAZjOZSYFY3bxQ: command not found
+key_3.pem: line 24: FwrR/QKBgQC9H8oyo51yynmiJY3fnMBQwldHYGeBrPpLYoRu59SJVF+iNSI7BsUX: No such file or directory
+key_3.pem: line 25: TISiIjWHfzlj+qqv8OYmuZl6bkdR989KSc0RuA9JCpJR0p3cOiAvUpl1f8Va5s5o: command not found
+key_3.pem: line 26: 2ujfSapRakeuEuJ9u4Ky7zsME/PqDGLDjHoOqsAh7jJCC7YcNSYZGw==: No such file or directory
+key_3.pem: line 27: -----END: command not found
+arinaten@MacBook-Air-Arina Downloads % ssh -i key_3.pem ubuntu@44.202.158.149
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 5.4.0-1092-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Jan 17 08:11:30 UTC 2023
+
+  System load:  0.0               Processes:           98
+  Usage of /:   23.6% of 7.57GB   Users logged in:     1
+  Memory usage: 30%               IP address for eth0: 172.31.85.194
+  Swap usage:   0%
+
+
+7 updates can be applied immediately.
+7 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+New release '20.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue Jan 17 07:18:34 2023 from 46.251.198.82
+ubuntu@ip-172-31-85-194:~$ sudo apt-get install libpq-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libpq5
+Suggested packages:
+  postgresql-doc-10
+The following NEW packages will be installed:
+  libpq-dev libpq5
+0 upgraded, 2 newly installed, 0 to remove and 3 not upgraded.
+Need to get 327 kB of archives.
+After this operation, 1486 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpq5 amd64 10.23-0ubuntu0.18.04.1 [108 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpq-dev amd64 10.23-0ubuntu0.18.04.1 [219 kB]
+Fetched 327 kB in 0s (9653 kB/s)
+Selecting previously unselected package libpq5:amd64.
+(Reading database ... 63155 files and directories currently installed.)
+Preparing to unpack .../libpq5_10.23-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking libpq5:amd64 (10.23-0ubuntu0.18.04.1) ...
+Selecting previously unselected package libpq-dev.
+Preparing to unpack .../libpq-dev_10.23-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking libpq-dev (10.23-0ubuntu0.18.04.1) ...
+Setting up libpq5:amd64 (10.23-0ubuntu0.18.04.1) ...
+Setting up libpq-dev (10.23-0ubuntu0.18.04.1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.6) ...
+ubuntu@ip-172-31-85-194:~$ sudo apt-get postgresql postgresql-contrib
+E: Invalid operation postgresql
+ubuntu@ip-172-31-85-194:~$ sudo apt-get install postgresql postgresql-contrib
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libsensors4 postgresql-10 postgresql-client-10 postgresql-client-common postgresql-common ssl-cert sysstat
+Suggested packages:
+  lm-sensors postgresql-doc locales-all postgresql-doc-10 libjson-perl openssl-blacklist isag
+The following NEW packages will be installed:
+  libsensors4 postgresql postgresql-10 postgresql-client-10 postgresql-client-common postgresql-common
+  postgresql-contrib ssl-cert sysstat
+0 upgraded, 9 newly installed, 0 to remove and 3 not upgraded.
+Need to get 5261 kB of archives.
+After this operation, 20.7 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsensors4 amd64 1:3.4.0-4ubuntu0.1 [28.3 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 postgresql-client-common all 190ubuntu0.1 [29.6 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 postgresql-client-10 amd64 10.23-0ubuntu0.18.04.1 [943 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 ssl-cert all 1.0.39 [17.0 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 postgresql-common all 190ubuntu0.1 [157 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 postgresql-10 amd64 10.23-0ubuntu0.18.04.1 [3779 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 postgresql all 10+190ubuntu0.1 [5884 B]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 postgresql-contrib all 10+190ubuntu0.1 [5896 B]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 sysstat amd64 11.6.1-1ubuntu0.2 [295 kB]
+Fetched 5261 kB in 0s (32.4 MB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libsensors4:amd64.
+(Reading database ... 63190 files and directories currently installed.)
+Preparing to unpack .../0-libsensors4_1%3a3.4.0-4ubuntu0.1_amd64.deb ...
+Unpacking libsensors4:amd64 (1:3.4.0-4ubuntu0.1) ...
+Selecting previously unselected package postgresql-client-common.
+Preparing to unpack .../1-postgresql-client-common_190ubuntu0.1_all.deb ...
+Unpacking postgresql-client-common (190ubuntu0.1) ...
+Selecting previously unselected package postgresql-client-10.
+Preparing to unpack .../2-postgresql-client-10_10.23-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking postgresql-client-10 (10.23-0ubuntu0.18.04.1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../3-ssl-cert_1.0.39_all.deb ...
+Unpacking ssl-cert (1.0.39) ...
+Selecting previously unselected package postgresql-common.
+Preparing to unpack .../4-postgresql-common_190ubuntu0.1_all.deb ...
+Adding 'diversion of /usr/bin/pg_config to /usr/bin/pg_config.libpq-dev by postgresql-common'
+Unpacking postgresql-common (190ubuntu0.1) ...
+Selecting previously unselected package postgresql-10.
+Preparing to unpack .../5-postgresql-10_10.23-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking postgresql-10 (10.23-0ubuntu0.18.04.1) ...
+Selecting previously unselected package postgresql.
+Preparing to unpack .../6-postgresql_10+190ubuntu0.1_all.deb ...
+Unpacking postgresql (10+190ubuntu0.1) ...
+Selecting previously unselected package postgresql-contrib.
+Preparing to unpack .../7-postgresql-contrib_10+190ubuntu0.1_all.deb ...
+Unpacking postgresql-contrib (10+190ubuntu0.1) ...
+Selecting previously unselected package sysstat.
+Preparing to unpack .../8-sysstat_11.6.1-1ubuntu0.2_amd64.deb ...
+Unpacking sysstat (11.6.1-1ubuntu0.2) ...
+Setting up ssl-cert (1.0.39) ...
+Setting up postgresql-client-common (190ubuntu0.1) ...
+Setting up postgresql-common (190ubuntu0.1) ...
+Adding user postgres to group ssl-cert
+
+Creating config file /etc/postgresql-common/createcluster.conf with new version
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
+Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service → /lib/systemd/system/postgresql.service.
+Setting up libsensors4:amd64 (1:3.4.0-4ubuntu0.1) ...
+Setting up postgresql-client-10 (10.23-0ubuntu0.18.04.1) ...
+update-alternatives: using /usr/share/postgresql/10/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up sysstat (11.6.1-1ubuntu0.2) ...
+
+Creating config file /etc/default/sysstat with new version
+update-alternatives: using /usr/bin/sar.sysstat to provide /usr/bin/sar (sar) in auto mode
+Created symlink /etc/systemd/system/multi-user.target.wants/sysstat.service → /lib/systemd/system/sysstat.service.
+Setting up postgresql-10 (10.23-0ubuntu0.18.04.1) ...
+Creating new PostgreSQL cluster 10/main ...
+/usr/lib/postgresql/10/bin/initdb -D /var/lib/postgresql/10/main --auth-local peer --auth-host md5
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "C.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/10/main ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default timezone ... Etc/UTC
+selecting dynamic shared memory implementation ... posix
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    /usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l logfile start
+
+Ver Cluster Port Status Owner    Data directory              Log file
+10  main    5432 down   postgres /var/lib/postgresql/10/main /var/log/postgresql/postgresql-10-main.log
+update-alternatives: using /usr/share/postgresql/10/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Setting up postgresql (10+190ubuntu0.1) ...
+Setting up postgresql-contrib (10+190ubuntu0.1) ...
+Processing triggers for systemd (237-3ubuntu10.56) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.6) ...
+ubuntu@ip-172-31-85-194:~$ sudo -u postgres psql
+psql (10.23 (Ubuntu 10.23-0ubuntu0.18.04.1))
+Type "help" for help.
+
+postgres=# CREATE DATABASE my_project;
+CREATE DATABASE
+postgres=# CREATE USER my_project_user with password 'Arisha2004';
+CREATE ROLE
+postgres=# ALTER ROLE my_project_user set client_encoding to 'utf8'; 
+ALTER ROLE
+postgres=# ALTER role my_project_user SET default_transaction_ to 'read_comitted';
+ERROR:  unrecognized configuration parameter "default_transaction_"
+postgres=# ALTER role my_project_user SET default_transaction to 'read_comitted';
+ERROR:  unrecognized configuration parameter "default_transaction"
+postgres=# ALTER role my_project_user SET default_transaction_isolation to 'read_comitted';
+ERROR:  invalid value for parameter "default_transaction_isolation": "read_comitted"
+HINT:  Available values: serializable, repeatable read, read committed, read uncommitted.
+postgres=# ALTER role my_project_user SET default_transaction_isolation to 'read_committed';
+ERROR:  invalid value for parameter "default_transaction_isolation": "read_committed"
+HINT:  Available values: serializable, repeatable read, read committed, read uncommitted.
+postgres=# ALTER ROLE  my_project_user SET default_transaction_isolation TO 'read_committed';
+ERROR:  invalid value for parameter "default_transaction_isolation": "read_committed"
+HINT:  Available values: serializable, repeatable read, read committed, read uncommitted.
+postgres=# ERROR:  invalid value for parameter "default_transaction_isolation": "read_committed"
+postgres-# HINT:  Available values: serializable, repeatable read, read committed, read uncommitted.
+postgres-# ERROR:  invalid value for parameter "default_transaction_isolation": "read_committed"
+postgres-# HINT:  Available values: serializable, repeatable read, read committed, read uncommitted.
+postgres-# 
+postgres-# 
+postgres-# 
+postgres-# ERROR:  invalid value for parameter "default_transaction_isolation": "read_committed"
+postgres-# HINT:  Available values: serializable, repeatable read, read committed, read uncommitted.
+postgres-# ERROR:  invalid value for parameter "default_transaction_isolation": "read_committed"
+postgres-# HINT:  Available values: serializable, repeatable read, read committed, read uncommitted.
+postgres-# ERROR:  invalid value for parameter "default_transaction_isolation": "read_committed"
+postgres-# HINT:  Available values: serializable, repeatable read, read committed, read uncommitted.
+postgres-# ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
+ERROR:  syntax error at or near "ERROR"
+LINE 1: ERROR:  invalid value for parameter "default_transaction_iso...
+        ^
+postgres=# ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
+ERROR:  role "myprojectuser" does not exist
+postgres=# CREATE DATABASE myproject;
+CREATE DATABASE
+postgres=# CREATE USER myprojectuser WITH PASSWORD 'password';
+CREATE ROLE
+postgres=# ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
+ALTER ROLE
+postgres=# ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
+ALTER ROLE
+postgres=# ALTER ROLE myprojectuser SET timezone TO 'UTC';
+ALTER ROLE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+GRANT
+postgres=# \q
+ubuntu@ip-172-31-85-194:~$ cd home/untubu/EXAM_rest/
+-bash: cd: home/untubu/EXAM_rest/: No such file or directory
+ubuntu@ip-172-31-85-194:~$ cd EXAM_rest/
+ubuntu@ip-172-31-85-194:~/EXAM_rest$ mc
+
+
+ubuntu@ip-172-31-85-194:~/EXAM_rest$ source venv//bin/activate
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py migrate
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/__init__.py", line 363, in execute
+    settings.INSTALLED_APPS
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/conf/__init__.py", line 82, in __getattr__
+    self._setup(name)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/conf/__init__.py", line 69, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/conf/__init__.py", line 170, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 781, in get_code
+  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/EXAM_rest/exam/settings.py", line 130
+    STATIC_URL = '/static/
+                         ^
+SyntaxError: EOL while scanning string literal
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ mc
+
+
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py migrate
+Traceback (most recent call last):
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 25, in <module>
+    import psycopg2 as Database
+ModuleNotFoundError: No module named 'psycopg2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/__init__.py", line 395, in execute
+    django.setup()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/apps/config.py", line 301, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/contrib/auth/models.py", line 3, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 48, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/models/base.py", line 122, in __new__
+    new_class.add_to_class('_meta', Options(meta, app_label))
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/models/base.py", line 326, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/models/options.py", line 207, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/connection.py", line 15, in __getattr__
+    return getattr(self._connections[self._alias], item)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/connection.py", line 62, in __getitem__
+    conn = self.create_connection(alias)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/utils.py", line 204, in create_connection
+    backend = load_backend(db['ENGINE'])
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/utils.py", line 111, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 29, in <module>
+    raise ImproperlyConfigured("Error loading psycopg2 module: %s" % e)
+django.core.exceptions.ImproperlyConfigured: Error loading psycopg2 module: No module named 'psycopg2'
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ pip3 install psycopg2-binary
+Collecting psycopg2-binary
+  Downloading psycopg2_binary-2.9.5-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+     |████████████████████████████████| 3.0 MB 20.9 MB/s            
+Installing collected packages: psycopg2-binary
+Successfully installed psycopg2-binary-2.9.5
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py migrate
+Traceback (most recent call last):
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "myprojectuser"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "myprojectuser"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/base.py", line 354, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/base.py", line 89, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/commands/migrate.py", line 75, in handle
+    self.check(databases=[database])
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/core/checks/model_checks.py", line 34, in check_all_models
+    errors.extend(model.check(**kwargs))
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/models/base.py", line 1290, in check
+    *cls._check_indexes(databases),
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/models/base.py", line 1680, in _check_indexes
+    connection.features.supports_covering_indexes or
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/postgresql/features.py", line 93, in is_postgresql_11
+    return self.connection.pg_version >= 110000
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 329, in pg_version
+    with self.temporary_connection():
+  File "/usr/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/base/base.py", line 603, in temporary_connection
+    with self.cursor() as cursor:
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "myprojectuser"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "myprojectuser"
+
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ mc
+
+
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: account, admin, auth, authtoken, contenttypes, news, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying account.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying authtoken.0001_initial... OK
+  Applying authtoken.0002_auto_20160226_1747... OK
+  Applying authtoken.0003_tokenproxy... OK
+  Applying news.0001_initial... OK
+  Applying news.0002_auto_20230113_1119... OK
+  Applying news.0003_rename_type_commentstatus_status... OK
+  Applying sessions.0001_initial... OK
+(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py runserver 0.0.0.0:8000
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 17, 2023 - 14:45:34
+Django version 3.2, using settings 'exam.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+^C(venv) ubuntu@ip-172-31-85-194:~/EXAM_rest$ python3 manage.py runserver 0.0.0.0:8000
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 17, 2023 - 14:47:13
+Django version 3.2, using settings 'exam.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/EXAM_rest/venv/lib/python3.6/site-packages/rest_framework/pagination.py:200: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'news.models.News'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+[17/Jan/2023 14:47:17] "GET /api/news/ HTTP/1.1" 200 7149
+[17/Jan/2023 14:47:17] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 404 179
+[17/Jan/2023 14:47:17] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 404 179
+[17/Jan/2023 14:47:17] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 404 179
+[17/Jan/2023 14:47:17] "GET /static/rest_framework/css/default.css HTTP/1.1" 404 179
+[17/Jan/2023 14:47:17] "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 404 179
+[17/Jan/2023 14:47:18] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 404 179
+[17/Jan/2023 14:47:18] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 404 179
+[17/Jan/2023 14:47:18] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 404 179
+[17/Jan/2023 14:47:18] "GET /static/rest_framework/js/default.js HTTP/1.1" 404 179
+[17/Jan/2023 14:47:18] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 404 179
+
